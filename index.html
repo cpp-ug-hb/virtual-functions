@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Virtual Functions</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -25,23 +25,72 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+						<textarea data-template>
+							#### Virtual Functions
+							#### Finn Haedicke
+							#### C++ User-Group Bremen
+						</textarea>
+					</section>
+
+					<section data-background="#212121">
+						<section data-separator-notes="^Note:"
+							data-vertical="^---\n"
+							data-markdown="overview.md">
+						</section>
+					</section>
+
+					<section data-background="#212121">
+						<section data-separator-notes="^Note:"
+							data-vertical="^---\n"
+							data-markdown="basics.md">
+						</section>
+					</section>
+
+					<section data-background="#212121">
+						<section data-separator-notes="^Note:"
+							data-vertical="^---\n"
+							data-markdown="virtual_functions.md">
+						</section>
+					</section>
+
+					<section data-background="#212121">
+						<section data-separator-notes="^Note:"
+							data-vertical="^---\n"
+							data-markdown="mistakes.md">
+						</section>
+					</section>
+
+					<section data-background="#212121">
+						<section data-separator-notes="^Note:"
+							data-vertical="^---\n"
+							data-markdown="summary.md">
+						</section>
+					</section>
 			</div>
 		</div>
 
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				history: true,
+				transition: 'fade',
+				slideNumber: true,
+				width: 1280,
+				height: 720,
+				markdown: {
+					smartypants: true,
+				},
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
+					{src: 'plugin/markdown/marked.js'},
+					{src: 'plugin/markdown/markdown.js'},
+					{src: 'plugin/notes/notes.js', async: true},
+					{
+						src: 'plugin/highlight/highlight.js',
+						async: true,
+						callback: () => hljs.initHighlightingOnLoad()
+					}
 				]
 			});
 		</script>
